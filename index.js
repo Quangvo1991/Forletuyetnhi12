@@ -21,7 +21,7 @@ document.getElementById("myButton").addEventListener("click", function () {
     setTimeout(function () {
         // Mở một tab mới với trang HTML mới
         window.open("page.html", "_blank");
-    }, 6000); // 5000 milliseconds = 10 giây
+    }, 10000); // 5000 milliseconds = 10 giây
 });
 
 // script.js
