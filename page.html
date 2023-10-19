@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lại for Nhi</title>
+    <link rel="stylesheet" href="./page.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="stylesheet" href="./index.min.js">
+	<link rel="icon" type="image/png" href="./pic/akasuki.jpg" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+
+
+</head>
+<body>
+	<h1>
+	 <img src="./pic/112312545445.png" alt="">
+	 
+
+	
+			<canvas id="canvas" width="1400" height="600"></canvas>
+			<button class="box">
+				Nhấn vào đi NHIIIII
+			</button>
+		<div class="popup">
+				<h3>🌹🌹Chúc bạn LeTuyetNhi 20/10 vui vẻ nhooo🌹🌹</h3>
+				<h4>DCM NHỚ ĂN VÀO ĐỪNG LƯỜI NỮA😡😡
+				</h4>
+				<b class="close">X</b>
+				
+		</div>
+		<audio id="background-music" src="./pic/2AM-JustaTee-BigDaddy.mp3" loop></audio>
+
+		</h1>
+
+		<canvas id="my-canvas"></canvas>
+
+		<script src="./index.min.js"></script>
+		<script>
+			let box = document.querySelector('.box');
+			let popup = document.querySelector('.popup');
+			let close = document.querySelector('.close');	
+			let confe = document.querySelector('#my-canvas');
+			let backgroundMusic = document.getElementById('background-music');
+			box.onclick = function(){
+				popup.classList.add('active');
+				confe.classList.add('active');
+				backgroundMusic.play();
+			}
+			close.onclick = function(){
+				popup.classList.remove('active');
+				confe.classList.remove('active');
+				backgroundMusic.pause(); 
+			}
+
+			var confettiSettings = { target: 'my-canvas' };
+			var confetti = new ConfettiGenerator
+			(confettiSettings);
+			confetti.render();
+
+		</script>
+
+		
+
+	</body>
+	</html>

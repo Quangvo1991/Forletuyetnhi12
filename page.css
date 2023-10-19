@@ -1,0 +1,176 @@
+body{
+  background-color: rgba(227, 159, 192, 0.703);
+}
+h1
+{
+    
+    margin: 0;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    margin-left: 100px;
+  
+  }
+  .box {
+    --glow-color: rgb(251, 250, 251);
+    --glow-spread-color: rgba(223, 177, 197, 0.781);
+    --enhanced-glow-color: rgb(155, 91, 151);
+    --btn-color:rgba(227, 159, 192, 0.703);
+    border: .25em solid var(--glow-color);
+    padding: 1em 3em;
+    color: var(--glow-color);
+    font-size: 15px;
+    font-weight: bold;
+    background-color: var(--btn-color);
+    border-radius: 1em;
+    outline: none;
+    box-shadow: 0 0 1em .25em var(--glow-color),
+           0 0 4em 1em var(--glow-spread-color),
+           inset 0 0 .75em .25em var(--glow-color);
+    text-shadow: 0 0 .5em var(--glow-color);
+    position: relative;
+    transition: all 0.3s;
+   }
+   
+   .box::after {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 120%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--glow-spread-color);
+    filter: blur(2em);
+    opacity: .7;
+    transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
+   }
+   
+   .box:hover {
+    color: var(--btn-color);
+    background-color: var(--glow-color);
+    box-shadow: 0 0 1em .25em var(--glow-color),
+           0 0 4em 2em var(--glow-spread-color),
+           inset 0 0 .75em .25em var(--glow-color);
+   }
+   
+   .box:active {
+    box-shadow: 0 0 0.6em .25em var(--glow-color),
+           0 0 2.5em 2em var(--glow-spread-color),
+           inset 0 0 .5em .25em var(--glow-color);
+   }
+   /* Định vị canvas và nút */
+#canvas-container {
+    position: relative;
+    width: 1400px;
+    height: 600px;
+}
+
+#canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+.box {
+  /* Your existing box styles */
+
+  /* Positioning styles to center the box */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.popup
+{
+    position: fixed;
+  display: block;
+  font-family: 'Roboto', sans-serif;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50% , -50%);
+  background: white;
+  width: 450px;
+  height: 300px;
+  box-shadow: 0 25px 50px rgb(0, 0, 0 ,0.1),
+  0 0 0 1000px rgb(255, 255, 255, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  visibility: hidden;
+
+}
+.popup.active
+{
+  visibility: visible;
+  
+}
+.close
+{
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px 20px;
+  background: red;
+  color: white;
+  cursor: pointer;
+}
+#my-canvas
+{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 100000;
+  visibility: hidden;
+  pointer-events: none;
+}
+#my-canvas.active
+{
+  visibility: visible;
+}
+/* Điều chỉnh font size của h1 cho màn hình Samsung Galaxy A32 */
+@media (max-width: 1080px) and (max-height: 2400px) {
+  h1 {
+      font-size: 24px; /* Điều chỉnh kích thước font cho màn hình này */
+  }
+}
+
+/* Điều chỉnh vị trí và kích thước của canvas cho màn hình Samsung Galaxy A32 */
+@media (max-width: 1080px) and (max-height: 2400px) {
+  canvas#canvas {
+      width: 100%; /* Điều chỉnh chiều rộng của canvas để nó điền vào màn hình */
+      height: auto; /* Chiều cao tự động thay đổi để duy trì tỷ lệ khung hình */
+  }
+}
+
+/* Điều chỉnh kích thước và vị trí của button cho màn hình Samsung Galaxy A32 */
+@media (max-width: 1080px) and (max-height: 2400px) {
+  button.box {
+      font-size: 18px; /* Điều chỉnh kích thước font cho button */
+      margin-top: 20px; /* Điều chỉnh khoảng cách từ button đến nội dung khác */
+  }
+}
+
+/* Điều chỉnh kích thước của popup cho màn hình Samsung Galaxy A32 */
+@media (max-width: 1080px) and (max-height: 2400px) {
+  .popup {
+      font-size: 14px; /* Điều chỉnh kích thước font cho nội dung popup */
+  }
+}
+
+.popup h4 {
+  font-size: 14px; /* Adjust the font size as needed */
+  margin-top: 370px; /* Add margin to separate it from h3 */
+  display: inline;
+  white-space: nowrap;
+  position: fixed;
+  
+ 
+}
